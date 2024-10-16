@@ -1,0 +1,122 @@
+/* Register.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+}
+
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; 
+  padding: 20px;
+}
+
+.register-content {
+  display: flex;
+  width: 80%;               /* Control the width of the form and image */
+  max-width: 1100px;         /* Keep a max width so it doesn't expand too much */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;  /* This makes sure the content adjusts its height properly */
+  overflow: hidden;  
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.register-form-container {
+  width: 50%;                 /* Make the form slightly narrower */
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #003049;
+  text-align: left;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sign-in-button {
+  background-color: #003049;
+  color: white;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sign-in-button:hover {
+  background-color: #002737;
+}
+
+.sign-up-option {
+  margin-top: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.register-image-container {
+  width: 50%;
+  height: auto; /* Adjust the height automatically */
+  display: flex;
+  flex-grow: 1; /* Ensure it expands fully within the container */
+}/* Add this to make the image fill the container */
+
+
+.register-image-container img {
+  width: 100%;
+  height: 100%;  /* Ensure the image takes up the full height of the container */
+  object-fit: cover;  /* Cover the container while maintaining the aspect ratio */
+  border-radius: 0 12px 12px 0;
+}
+
+@media (max-width: 1200px) {
+  .register-content {
+    flex-direction: column;  /* Stack form and image on smaller screens */
+  }
+
+  .register-image-container {
+    display: none;           /* Hide the image on small screens */
+  }
+
+  .register-form-container {
+    width: 100%;             /* Make form take up full width on mobile */
+  }
+}
