@@ -1,0 +1,92 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+  }
+  
+  .form-wrapper {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    
+  }
+  
+  /* h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #333;
+  }
+   */
+   h2 {
+    font-size: 1.5em; /* Increase font size for emphasis */
+    margin-bottom: 30px;
+    color: #393f64f8;
+    font-weight: bold; /* Make it bold */
+    letter-spacing: 0px; /* Add some spacing between letters */
+    text-transform: uppercase; /* Make the text uppercase */
+    
+    /* Text shadow for a slight 3D effect */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    
+    /* Optional gradient text */
+    background: linear-gradient(45deg, #b7b8c0f8, #0d0d0ef8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    /* Add a small animation to make it stand out */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  h2:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 15px ;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    color: #f7f3f6;
+    outline: none;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #4CAF50;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: #393f64f8;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #eff5ef;
+    color: #333;
+  }
+  
+  .success-message {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #4CAF50;
+  }
