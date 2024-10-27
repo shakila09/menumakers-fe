@@ -1,4 +1,4 @@
-/* Register.css */
+/* Login.css */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body, html {
   background-color: #f0f4f8;
 }
 
-.register-page {
+.login-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +20,14 @@ body, html {
   padding: 20px;
 }
 
-.register-content {
+.login-content {
   display: flex;
   width: 80%;               /* Control the width of the form and image */
   max-width: 1100px;         /* Keep a max width so it doesn't expand too much */
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: auto;  /* This makes sure the content adjusts its height properly */
+  height: auto;  /* adjusts its height properly */
   overflow: hidden;  
 }
 .error-message {
@@ -36,7 +36,7 @@ body, html {
   margin-top: 5px;
 }
 
-.register-form-container {
+.login-form-container {
   width: 50%;                 /* Make the form slightly narrower */
   padding: 60px 50px;
   display: flex;
@@ -92,31 +92,30 @@ input {
   text-align: center;
 }
 
-.register-image-container {
+.login-image-container {
   width: 50%;
   height: auto; /* Adjust the height automatically */
   display: flex;
   flex-grow: 1; /* Ensure it expands fully within the container */
-}/* Add this to make the image fill the container */
+}
 
-
-.register-image-container img {
+.login-image-container img {
   width: 100%;
-  height: 100%;  /* Ensure the image takes up the full height of the container */
+  height: 100%;  /* image takes up the full height of the container */
   object-fit: cover;  /* Cover the container while maintaining the aspect ratio */
   border-radius: 0 12px 12px 0;
 }
 
 @media (max-width: 1200px) {
-  .register-content {
+  .login-content {
     flex-direction: column;  /* Stack form and image on smaller screens */
   }
 
-  .register-image-container {
+  .login-image-container {
     display: none;           /* Hide the image on small screens */
   }
 
-  .register-form-container {
+  .login-form-container {
     width: 100%;             /* Make form take up full width on mobile */
   }
 }
