@@ -20,10 +20,9 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Clear any previous errors
       setErrors([]);
 
-      // Send a POST request to your backend
+      // Send a POST request to  backend
       const response = await axios.post(
         "http://localhost:5000/api/auth/register",
         formData
