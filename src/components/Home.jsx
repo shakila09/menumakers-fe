@@ -3,18 +3,35 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './Home.css';
+import './template.css';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
   const [svgPaths, setSvgPaths] = useState([]);
-
+  const [svgPaths_pre, setSvgPaths_pre] = useState([]);
   // Dynamically import all SVG files from the templates folder using import.meta.glob
   useEffect(() => {
-    const svgFiles = import.meta.glob('/src/templates/*.svg',{ eager: true });
-    console.log(svgFiles);
+    const svgFiles_Free = import.meta.glob('/src/templates/Free/*.svg',{ eager: true });
+    const svgFiles_Premium = import.meta.glob('/src/templates/Premium/*.svg',{ eager: true });
      // Extract the default export from each SVG file and store it in svgPaths
-     const paths = Object.values(svgFiles).map((module) => module.default);
-     setSvgPaths(paths);
+    //  const paths = Object.values(svgFiles_Free).map((module) => module.default);
+    //  const paths_pre = Object.values(svgFiles_Premium).map((module) => module.default);
+// Map each file to an object with `id` and `src`
+const freeTemplateArray = Object.entries(svgFiles_Free).map(([filePath, module]) => ({
+  id: filePath.split('/').pop().replace('.svg', ''), // Unique ID based on file name
+  src: module.default
+}));
+
+const premiumTemplateArray = Object.entries(svgFiles_Premium).map(([filePath, module]) => ({
+  id: filePath.split('/').pop().replace('.svg', ''),
+  src: module.default
+}));
+
+
+     setSvgPaths(freeTemplateArray);
+     setSvgPaths_pre(premiumTemplateArray);
    }, []);
 
   return (
@@ -40,9 +57,31 @@ function Home() {
         </section>
 
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {svgPaths.map((src, index) => (
-          <div key={index} style={{ margin: '40px'}}>
-            <img src={src} alt={`SVG Template ${index + 1}`} width="270" height="350" />
+        {svgPaths.map((template) => (
+          <div key={template.id} style={{ margin: '40px'}}>
+            <div className="template-card" onClick={() => navigate(`/template/${template.id}`)}
+          style={{ cursor: 'pointer' }} >
+            <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
+            <div className="overlay">
+            <Link to="/register"> <button className="edit-button" onClick={(event) => {
+                  event.stopPropagation(); }}>Edit</button></Link>
+        </div>
+          </div>
+          </div>
+        ))}
+        
+        {svgPaths_pre.map((template) => (
+          <div key={template.id} style={{ margin: '40px'}}>
+            <div className="template-card" onClick={() => navigate(`/template/${template.id}`)}
+          style={{ cursor: 'pointer' }}>
+            <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
+            <div className="overlay">
+            <button className="pro-badge">Pro</button> 
+            <Link to="/BuyTemplate"> <button className="edit-button" onClick={(event) => {
+                  event.stopPropagation(); }} >Edit</button></Link>
+               
+          </div>
+          </div>
           </div>
         ))}
       </div>
