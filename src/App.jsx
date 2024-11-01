@@ -9,8 +9,10 @@ import Header from './components/header';
  import Footer from './components/footer';
  import TemplateFullView from './components/TemplateFullView';
  import BuyTemplate from './components/BuyTemplate';
-const App = () => {
+ import Success from './components/Success';
+import Cancel from './components/Cancel';
 
+const App = () => {
   // Dynamically import all SVG files from Free and Premium folders
   const freeTemplates = import.meta.glob('/src/templates/Free/*.svg', { eager: true });
   const premiumTemplates = import.meta.glob('/src/templates/Premium/*.svg', { eager: true });
@@ -46,7 +48,9 @@ const App = () => {
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/home" element={<Home templates={templates} />} />
           <Route path="/template/:id" element={<TemplateFullView templates={templates} />} />
-          <Route path="/BuyTemplate" element={<BuyTemplate />} />
+          <Route path="/Buytemplate/:id" element={<BuyTemplate templates={templates} />} />
+          <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
         </Routes>
         <Footer /> 
       </div>

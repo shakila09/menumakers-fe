@@ -77,7 +77,7 @@ const premiumTemplateArray = Object.entries(svgFiles_Premium).map(([filePath, mo
             <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
             <div className="overlay">
             <button className="pro-badge">Pro</button> 
-            <Link to="/BuyTemplate"> <button className="edit-button" onClick={(event) => {
+            <Link to="/register"> <button className="edit-button" onClick={(event) => {
                   event.stopPropagation(); }} >Edit</button></Link>
                
           </div>
