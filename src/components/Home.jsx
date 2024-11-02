@@ -1,47 +1,41 @@
-
 // Home.jsx
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Home.css';
-import { Link } from 'react-router-dom';
 
-function Home() {
+const Home = () => {
   const [svgPaths, setSvgPaths] = useState([]);
+  const navigate = useNavigate();
 
   // Dynamically import all SVG files from the templates folder using import.meta.glob
   useEffect(() => {
-    const svgFiles = import.meta.glob('/src/templates/*.svg',{ eager: true });
-    console.log(svgFiles);
-     // Extract the default export from each SVG file and store it in svgPaths
-     const paths = Object.values(svgFiles).map((module) => module.default);
-     setSvgPaths(paths);
-   }, []);
+    const svgFiles = import.meta.glob('/src/templates/*.svg', { eager: true });
+    const paths = Object.values(svgFiles).map((module) => module.default);
+    setSvgPaths(paths);
+  }, []);
+
+  // Navigate to editor when a template is clicked
+  const handleTemplateClick = (src) => {
+    navigate('/editor', { state: { templateSrc: src } });
+  };
 
   return (
     <div className="home-container">
-      {/* <header className="home-header">
-        <h1>MenuMakers</h1>
-        <nav>
-          <ul>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header> */}
-
       <section className="hero">
         <div className="hero-content">
           <h2>Create Custom Menus with Ease</h2>
           <p>MenuMakers allows you to design, edit, and download personalized menus in just a few clicks.</p>
-          <Link to="/register"><button className="cta-button">Get Started</button> </Link>
+          <Link to="/register"><button className="cta-button">Get Started</button></Link>
         </div>
-        </section>
+      </section>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {svgPaths.map((src, index) => (
-          <div key={index} style={{ margin: '40px'}}>
+          <div 
+            key={index} 
+            style={{ margin: '40px', cursor: 'pointer' }} 
+            onClick={() => handleTemplateClick(src)}
+          >
             <img src={src} alt={`SVG Template ${index + 1}`} width="270" height="350" />
           </div>
         ))}
@@ -70,7 +64,6 @@ function Home() {
       </footer> */}
     </div>
   );
-
-}
+};
 
 export default Home;
