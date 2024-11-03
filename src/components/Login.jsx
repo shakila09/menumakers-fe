@@ -23,6 +23,7 @@ const Login = () => {
 
       // Send a POST request to your backend for login
       const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      sessionStorage.setItem('userEmail', formData.email)
       console.log('User logged in:', response.data);
       alert('User logged in successfully');
     } catch (error) {
