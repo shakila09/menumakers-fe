@@ -43,7 +43,7 @@ const BuyTemplate = ({ templates }) => {
       emailjs.send('service_tykzw2c', 'template_es9bbh8', {
         to_email: sessionStorage.getItem('userEmail'), // This should be the recipient's email
         subject: 'Payment Successful',
-        message: 'Thank you for your purchase! You can now edit your template.Please check your email.',
+        message: 'Thank you for your purchase! You can now edit your template.',
       }, 'HIiQgXkfmQYOqLiB8')
       .then(() => {
         alert('Email sent successfully');
