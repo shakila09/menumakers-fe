@@ -1,4 +1,5 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
@@ -36,6 +37,20 @@ const BuyTemplate = ({ templates }) => {
 
     if (result.error) {
       console.error(result.error.message);
+    }
+
+    if(!result.error){
+      emailjs.send('service_tykzw2c', 'template_es9bbh8', {
+        to_email: sessionStorage.getItem('userEmail'), // This should be the recipient's email
+        subject: 'Payment Successful',
+        message: 'Thank you for your purchase! You can now edit your template.',
+      }, 'HIiQgXkfmQYOqLiB8')
+      .then(() => {
+        alert('Email sent successfully');
+      }, (error) => {
+        console.error(error.text);
+        alert('Failed to send email');
+      });
     }
   };
 
