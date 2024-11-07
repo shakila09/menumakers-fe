@@ -1,23 +1,8 @@
+
 // Home.jsx
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import './Home.css';
-
-const Home = () => {
-  const [svgPaths, setSvgPaths] = useState([]);
-  const navigate = useNavigate();
-
-  // Dynamically import all SVG files from the templates folder using import.meta.glob
-  useEffect(() => {
-    const svgFiles = import.meta.glob('/src/templates/*.svg', { eager: true });
-    const paths = Object.values(svgFiles).map((module) => module.default);
-    setSvgPaths(paths);
-  }, []);
-
-  // Navigate to editor when a template is clicked
-  const handleTemplateClick = (src) => {
-    navigate('/editor', { state: { templateSrc: src } });
-  };
 import './template.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -49,35 +34,55 @@ const premiumTemplateArray = Object.entries(svgFiles_Premium).map(([filePath, mo
      setSvgPaths_pre(premiumTemplateArray);
    }, []);
 
+
+// Function to handle template click with login check
+const handleTemplateClick = (templateId, templateSrc) => {
+  const userEmail = sessionStorage.getItem('userEmail');
+  if (userEmail) {
+    // User is logged in, navigate directly to the editor with templateSrc
+    navigate('/menu-editor', { state: { templateSrc } });
+  } else {
+    // User is not logged in, store intended path and templateSrc, and redirect to login
+    sessionStorage.setItem(
+      'redirectAfterLogin',
+      JSON.stringify({ path: '/menu-editor', templateSrc })
+    );
+    alert('Please log in to view and edit templates');
+    navigate('/login');
+  }
+};
+
+
+
   return (
     <div className="home-container">
       <section className="hero">
         <div className="hero-content">
           <h2>Create Custom Menus with Ease</h2>
           <p>MenuMakers allows you to design, edit, and download personalized menus in just a few clicks.</p>
-          <Link to="/register"><button className="cta-button">Get Started</button></Link>
+          <Link to="/register"><button className="cta-button">Get Started</button> </Link>
         </div>
-      </section>
+        </section>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {svgPaths.map((src, index) => (
-          <div 
-            key={index} 
-            style={{ margin: '40px', cursor: 'pointer' }} 
-            onClick={() => handleTemplateClick(src)}
-          >
-            <img src={src} alt={`SVG Template ${index + 1}`} width="270" height="350" />
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {svgPaths.map((template) => (
           <div key={template.id} style={{ margin: '40px'}}>
-            <div className="template-card" onClick={() => navigate(`/template/${template.id}`)}
+            <div className="template-card" 
+                 onClick={() => navigate(`/template/${template.id}`)}
           style={{ cursor: 'pointer' }} >
             <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
             <div className="overlay">
-            <Link to="/register"> <button className="edit-button" onClick={(event) => {
-                  event.stopPropagation(); }}>Edit</button></Link>
-        </div>
-          </div>
+            <button
+                  className="edit-button"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleTemplateClick(template.id, template.src); // Pass templateSrc to the function
+                  }}
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
           </div>
         ))}
         
@@ -87,12 +92,19 @@ const premiumTemplateArray = Object.entries(svgFiles_Premium).map(([filePath, mo
           style={{ cursor: 'pointer' }}>
             <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
             <div className="overlay">
-            <button className="pro-badge">Pro</button> 
-            <Link to="/register"> <button className="edit-button" onClick={(event) => {
-                  event.stopPropagation(); }} >Edit</button></Link>
-               
-          </div>
-          </div>
+            
+            <button
+                  className="edit-button"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleTemplateClick(template.id, template.src); // Pass templateSrc to the function
+                  }}
+                >
+                  Edit
+                </button>
+                <button className="pro-badge">Pro</button> 
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -120,6 +132,7 @@ const premiumTemplateArray = Object.entries(svgFiles_Premium).map(([filePath, mo
       </footer> */}
     </div>
   );
-};
+
+}
 
 export default Home;
