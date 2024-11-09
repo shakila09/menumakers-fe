@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './login.css'; 
 import backgroundImage from './background.jpg';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,19 +13,37 @@ const Login = () => {
   const [errors, setErrors] = useState([]); // State to store validation errors
 
   const { email, password } = formData;
+  const navigate = useNavigate(); // Initialize navigate
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      setErrors([]);
-
-      // Send a POST request to your backend for login
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
-      sessionStorage.setItem('userEmail', formData.email)
-      console.log('User logged in:', response.data);
+      setErrors([]); // Clear previous errors
+  
+      // Make POST request with withCredentials set to true
+      const response = await axios.post('http://localhost:5000/api/auth/login', formData, { withCredentials: true });
+      
+      // Set user data in sessionStorage if available
+      // if (response.data && response.data.name) {
+        // sessionStorage.setItem('userName', response.data.name); // Assuming the server sends back the user's name
+      // }
+      sessionStorage.setItem('userEmail', formData.email);
+      
       alert('User logged in successfully');
+
+   // Check if there's a stored redirect path
+   const redirectInfo = sessionStorage.getItem('redirectAfterLogin');
+   if (redirectInfo) {
+     const { path, templateSrc } = JSON.parse(redirectInfo);
+     sessionStorage.removeItem('redirectAfterLogin'); // Clear the stored path after using it
+     navigate(path, { state: { templateSrc } });
+   } else {
+     // Default redirection after login
+
+      navigate('/home');}
+      window.location.reload()
     } catch (error) {
       if (error.response && error.response.data.errors) {
         // Set the validation errors from the backend response
@@ -35,6 +53,7 @@ const Login = () => {
       }
     }
   };
+  
 
   return (
     <div className="register-page">
@@ -53,7 +72,6 @@ const Login = () => {
                 placeholder="Enter your email"
                 required
               />
-              {/* Display error message for email */}
               {errors.some((error) => error.param === 'email') && (
                 <span className="error-message">
                   {errors.find((error) => error.param === 'email').msg}
@@ -70,22 +88,18 @@ const Login = () => {
                 placeholder="Enter your password"
                 required
               />
-              {/* Display error message for password */}
               {errors.some((error) => error.param === 'password') && (
                 <span className="error-message">
                   {errors.find((error) => error.param === 'password').msg}
                 </span>
               )}
-              {/* Display error for invalid credentials */}
               {errors.some((error) => error.msg === 'Invalid credentials') && (
                 <span className="error-message">Invalid email or password</span>
               )}
             </div>
 
-            {/* Forgot Password Link */}
             <div className="forgot-password-link">
               <Link to="/forgot-password">Forgot Password?</Link> 
-              {/*/forgot-password is a route that renders ForgotPassword component */}
             </div>
 
             <button type="submit" className="sign-in-button">Login</button>
