@@ -11,6 +11,7 @@ function Home() {
   const navigate = useNavigate();
   const [svgPaths, setSvgPaths] = useState([]);
   const [svgPaths_pre, setSvgPaths_pre] = useState([]);
+  const [purchasedTemplates, setPurchasedTemplates] = useState([]);
   // Dynamically import all SVG files from the templates folder using import.meta.glob
   useEffect(() => {
     const svgFiles_Free = import.meta.glob('/src/templates/Free/*.svg',{ eager: true });
@@ -34,6 +35,7 @@ const premiumTemplateArray = Object.entries(svgFiles_Premium).map(([filePath, mo
      setSvgPaths_pre(premiumTemplateArray);
    }, []);
 
+   
 
 // Function to handle template click with login check
 const handleTemplateClick = (templateId, templateSrc) => {
@@ -52,7 +54,33 @@ const handleTemplateClick = (templateId, templateSrc) => {
   }
 };
 
+useEffect(() => {
+  const userEmail = sessionStorage.getItem('userEmail');
 
+  // Fetch purchased templates for the logged-in user
+  const fetchPurchasedTemplates = async () => {
+    if (userEmail) {
+      try {
+        const response = await fetch(`http://localhost:5001/api/purchases/User-purchases?userEmail=${userEmail}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message);
+        }
+
+        // Store the names of purchased templates
+        const purchasedNames = data.map((purchase) => purchase.templateName);
+        setPurchasedTemplates(purchasedNames);
+      } catch (error) {
+        console.error('Error fetching purchased templates:', error);
+      }
+    }
+  };
+
+  fetchPurchasedTemplates();
+}, []);
+// Check if the template is already purchased
+const isPurchased = (templateName) => purchasedTemplates.includes(templateName);
 
   return (
     <div className="home-container">
@@ -93,7 +121,7 @@ const handleTemplateClick = (templateId, templateSrc) => {
             <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
             <div className="overlay">
             
-            <button
+            {/* <button
                   className="edit-button"
                   onClick={(event) => {
                     event.stopPropagation();
@@ -101,7 +129,16 @@ const handleTemplateClick = (templateId, templateSrc) => {
                   }}
                 >
                   Edit
-                </button>
+                </button> */}
+               
+               {/* Disable the Buy button if the template is already purchased */}
+            {isPurchased(template.id) ? (
+              <button className="purchased-button" disabled>Purchased</button>
+            ) : (
+              <Link to={`/Buytemplate/${template.id}`}>
+                <button  className="edit-button">Buy Now</button>
+              </Link>
+            )}
                 <button className="pro-badge">Pro</button> 
               </div>
             </div>
