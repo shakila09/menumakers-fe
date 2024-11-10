@@ -47,7 +47,7 @@ const handleTemplateClick = (templateId, templateSrc) => {
       'redirectAfterLogin',
       JSON.stringify({ path: '/menu-editor', templateSrc })
     );
-    alert('Please log in to view and edit templates');
+    alert('Please log in to edit or buy  templates');
     navigate('/login');
   }
 };

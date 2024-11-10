@@ -78,7 +78,7 @@ function Header() {
           <li><Link to="/contact">Contact</Link></li>
           {loggedIn ? (
             <>
-              <li>Hi!! {userName}</li>
+              <li>Hi!!</li>
               <li><button onClick={handleLogout} className="logout-link">Logout</button></li>
             </>
           ) : (
