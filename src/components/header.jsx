@@ -74,17 +74,20 @@ function Header() {
               <FontAwesomeIcon icon={faHome} />
             </Link>
           </li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/about" className="nav-link" >About Us</Link></li>
+          <li><Link to="/contact" className="nav-link" >Contact</Link></li>
           {loggedIn ? (
-            <>
-              <li>Hi!! {userName}</li>
-              <li><button onClick={handleLogout} className="logout-link">Logout</button></li>
+            <> 
+           <li><Link to="/purchased-templates" className="nav-link"  >Purchased Templates</Link></li>
+              <li>Hi!!</li>
+              <li>
+                <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
+              </li>
             </>
           ) : (
             <>
-              <li><Link to="/register">Register</Link></li>
-              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/register" className="nav-link">Register</Link></li>
+              <li><Link to="/login" className="nav-link">Login</Link></li>
             </>
           )}
         </ul>

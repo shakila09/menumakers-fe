@@ -1,6 +1,45 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import './paymentStatus.css'; 
-const Success = () => (
+import { useLocation } from 'react-router-dom';
+const Success = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const templateId = queryParams.get('templateId');
+  const userEmail =sessionStorage.getItem("userEmail");
+// Function to save purchase details
+const savePurchaseDetails = async () => {
+
+  if (!templateId || !userEmail) {
+    console.error('Missing templateId or userEmail');
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:5001/api/payment/save-purchase', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        templateName: templateId,
+        userEmail: userEmail,
+      }),
+    });
+
+    const data = await response.json();
+    console.log('Purchase saved:', data);
+
+    if (!response.ok) {
+      throw new Error(data.message);
+    }
+  } catch (error) {
+    console.error('Error saving purchase:', error);
+  }
+};
+// Save purchase details when the component loads
+useEffect(() => {
+  savePurchaseDetails();
+}, []);
+
+  return(
   <div>
     <div className="success-container">
     <h2 className="success-title">Payment Successful</h2>
@@ -8,5 +47,6 @@ const Success = () => (
   </div>
   </div>
 );
+};
 
 export default Success;

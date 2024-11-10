@@ -23,12 +23,13 @@ const Login = () => {
       setErrors([]); // Clear previous errors
   
       // Make POST request with withCredentials set to true
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData, { withCredentials: true });
+      const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
       
       // Set user data in sessionStorage if available
       // if (response.data && response.data.name) {
         // sessionStorage.setItem('userName', response.data.name); // Assuming the server sends back the user's name
       // }
+      console.log(formData.email);
       sessionStorage.setItem('userEmail', formData.email);
       
       alert('User logged in successfully');

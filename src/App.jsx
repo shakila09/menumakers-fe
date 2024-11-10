@@ -12,9 +12,9 @@ import BuyTemplate from './components/BuyTemplate';
 import Success from './components/Success';
 import Cancel from './components/Cancel';
 import MenuEditor from './components/MenuEditor';
-import EditableSVG from './components/EditableSVG';
+import EditableSVG from './components/EditableSVG;
 import AboutUs from './components/AboutUs';
-
+import PurchasedTemplates from './components/PurchasedTemplates';
 
 const App = () => {
   // Dynamically import all SVG files from Free and Premium folders
@@ -58,6 +58,8 @@ const App = () => {
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancel />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/purchased-templates" element={<PurchasedTemplates />} />
+
 
           </Routes>
           <Footer />
