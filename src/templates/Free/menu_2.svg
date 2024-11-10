@@ -1,0 +1,38 @@
+<svg width="600" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#1C1C1C"/>
+
+  <!-- Header -->
+  <text x="50%" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFFFFF">
+    FOOD MENU
+  </text>
+  <text x="50%" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#CCCCCC">
+    Paucek and Lage Restaurant
+  </text>
+
+  <!-- Main Course Section -->
+  <rect x="30" y="160" width="540" height="200" fill="#FF7300" rx="10" ry="10"/>
+  <text x="50" y="200" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">MAIN COURSE</text>
+  <text x="50" y="230" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Cheeseburger ........................................... $34</text>
+  <text x="50" y="260" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Cheese sandwich ...................................... $22</text>
+  <text x="50" y="290" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Chicken burgers ...................................... $23</text>
+  <text x="50" y="320" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Spicy chicken ............................................. $33</text>
+  <text x="50" y="350" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Hot dog ....................................................... $24</text>
+
+  <!-- Appetizers Section -->
+  <rect x="30" y="380" width="540" height="140" fill="#FF7300" rx="10" ry="10"/>
+  <text x="50" y="420" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">APPETIZERS</text>
+  <text x="50" y="450" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Fruit Salad ................................................... $13</text>
+  <text x="50" y="480" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Cocktails ....................................................... $12</text>
+
+  <!-- Beverages Section -->
+  <rect x="30" y="530" width="540" height="140" fill="#FF7300" rx="10" ry="10"/>
+  <text x="50" y="570" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">BEVERAGES</text>
+  <text x="50" y="600" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Milk Shake .................................................... $3</text>
+  <text x="50" y="630" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF">Iced Tea ......................................................... $2</text>
+
+  <!-- Footer Contact Information -->
+  <text x="50%" y="780" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#FF7300">
+    📞 123-456-7890 • 📍 123 Anywhere St., Any City
+  </text>
+</svg>

@@ -1,0 +1,57 @@
+<svg width="600" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#2E2B28" />
+
+  <!-- Header -->
+  <text x="50%" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">
+    FOOD MENU
+  </text>
+  <text x="50%" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="white">
+    Paucek and Lage Restaurant
+  </text>
+
+  <!-- Main Course Section -->
+  <rect x="30" y="150" width="120" height="40" rx="5" ry="5" fill="#F7941D" />
+  <text x="90" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="black">
+    MAIN COURSE
+  </text>
+  <text x="50" y="220" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Cheeseburger ................................ $34
+  </text>
+  <text x="50" y="250" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Cheese sandwich .......................... $22
+  </text>
+  <text x="50" y="280" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Chicken burgers ........................... $23
+  </text>
+  <text x="50" y="310" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Spicy chicken ................................ $33
+  </text>
+  <text x="50" y="340" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Hot dog ........................................... $24
+  </text>
+
+  <!-- Appetizers Section -->
+  <rect x="30" y="380" width="120" height="40" rx="5" ry="5" fill="#F7941D" />
+  <text x="90" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="black">
+    APPETIZERS
+  </text>
+  <text x="50" y="450" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Fruit Salad ........................................ $13
+  </text>
+  <text x="50" y="480" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Cocktails .......................................... $12
+  </text>
+  <text x="50" y="510" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Nuggets ........................................... $14
+  </text>
+  <text x="50" y="540" font-family="Arial, sans-serif" font-size="18" fill="white">
+    Sandwich .......................................... $13
+  </text>
+  <text x="50" y="570" font-family="Arial, sans-serif" font-size="18" fill="white">
+    French Fries .................................... $15
+  </text>
+
+  <!-- Beverages Section -->
+  <rect x="30" y="610" width="120" height="40" rx="5" ry="5" fill="#F7941" />
+</svg>

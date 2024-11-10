@@ -1,0 +1,68 @@
+/* Success.css */
+
+.success-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    background-color: #f9fff9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Centering properties */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  
+  .success-title {
+    font-size: 28px;
+    color: #4CAF50; /* Green color for success */
+    margin-bottom: 10px;
+  }
+  
+  .success-message {
+    font-size: 18px;
+    color: #333;
+  }
+  
+
+  /* Cancel.css */
+
+.cancel-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #dc3333;
+    border-radius: 8px;
+    background-color: #fff9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Centering properties */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  
+  .cancel-title {
+    font-size: 28px;
+    color: #e21d1d; /* Green color for success */
+    margin-bottom: 10px;
+  }
+  
+  .cancel-message {
+    font-size: 18px;
+    color: #333;
+  }

@@ -1,0 +1,140 @@
+/* Home.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #edeff6fa;
+  color: #333;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home-header {
+  background-color: #393f64f8;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: 3em; /* Increase the size of the header */
+font-weight: bold; /* Make the font bold */
+letter-spacing: 3px; /* Add letter spacing for a modern look */
+color: #cbd3cc; /* Primary color */
+font-style: italic;
+font-family: fantasy;
+
+/* Optional gradient text */
+background: linear-gradient(90deg, #cbd4cc, #d0dad1);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+/* Add a subtle text shadow for depth */
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+/* Add transition for hover effect */
+transition: all 0.3s ease-in-out;
+}
+.home-header h1:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  color: #8f9790; /* Darken the text color on hover */
+}
+
+.home-header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.home-header nav ul li {
+  display: inline;
+}
+
+.home-header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #e2e8f0;
+  padding: 60px 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 3em;
+  margin: 0 0 20px;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #d28f3e;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #808980;
+}
+
+.features {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.features h3 {
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.features-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.feature {
+  width: 30%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feature h4 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
