@@ -1,0 +1,23 @@
+.purchased-templates-container {
+    padding: 20px;
+  }
+  
+  .template-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .template-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .purchased-template-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -138,3 +138,17 @@ transition: all 0.3s ease-in-out;
   padding: 20px;
   font-size: 0.9em;
 }
+/* Styling for the navigation links and buttons */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 5px 10px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #6b6565;
+}
