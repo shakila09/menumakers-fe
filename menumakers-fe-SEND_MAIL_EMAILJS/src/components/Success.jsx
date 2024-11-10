@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Success = () => {
   const navigate = useNavigate();
-
+// testing mail
   useEffect(() => {
     emailjs.send(
       'service_tykzw2c',
