@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 90vh;
   width: 100%;
 }
 
@@ -132,8 +132,8 @@ transition: all 0.3s ease-in-out;
 }
 
 .footer {
-  background-color: #333;
-  color: white;
+  background-color: #393f64f8;
+  color: #ffffff;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;

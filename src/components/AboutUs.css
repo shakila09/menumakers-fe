@@ -1,0 +1,105 @@
+/* AboutUs.css */
+
+.about-us-page {
+    font-family: 'Arial', sans-serif;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center; /* Center align all text */
+  }
+  
+  /* Section for the main heading and image */
+  .about-hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Text content styling */
+  .text-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: center; /* Centers the text */
+    margin: 0 auto; /* Centers the container horizontally */
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+  .text-content h3 {
+    font-size: 2.5rem;
+    color: #123;
+    margin-bottom: 20px;
+  }
+  
+  .text-content p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Image styling */
+  .image-content {
+    margin-top: 30px;
+  }
+  
+  .image-content img {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stats section styling */
+  /* Stats section styling */
+.stats-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;    /* Center horizontally */
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 150px; /* Adjust height for better alignment */
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.2rem;
+    color: #ff5722;
+    margin: 0; /* Remove margin for better centering */
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px; /* Add a small margin for spacing */
+}
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-hero-section {
+      flex-direction: column;
+    }
+  
+    .image-content img {
+      width: 90%;
+    }
+  
+    .stats-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

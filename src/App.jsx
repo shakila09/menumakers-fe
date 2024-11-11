@@ -12,7 +12,8 @@ import BuyTemplate from './components/BuyTemplate';
 import Success from './components/Success';
 import Cancel from './components/Cancel';
 import MenuEditor from './components/MenuEditor';
-import EditableSVG from './components/EditableSVG';
+import EditableSVG from './components/EditableSVG;
+import AboutUs from './components/AboutUs';
 import PurchasedTemplates from './components/PurchasedTemplates';
 
 const App = () => {
@@ -56,7 +57,9 @@ const App = () => {
             <Route path="/editable-svg/:id" element={<EditableSVG templates={templates} />} />  {/* Route for EditableSVG */}
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancel />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/purchased-templates" element={<PurchasedTemplates />} />
+
 
           </Routes>
           <Footer />
