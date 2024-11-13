@@ -79,7 +79,7 @@ function Header() {
           {loggedIn ? (
             <> 
            <li><Link to="/purchased-templates" className="nav-link"  >Purchased Templates</Link></li>
-              <li>Hi!!</li>
+              <li>Hi!! {sessionStorage.getItem('userName')}</li>
               <li>
                 <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
               </li>
