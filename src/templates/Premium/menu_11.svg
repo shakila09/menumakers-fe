@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400" viewBox="0 0 1000 1400" style="background-color:#e0f7fa; font-family: 'Verdana', sans-serif;">
+  <!-- Header with Palm Leaves -->
+  <path d="M0,150 Q500,-50 1000,150" fill="#00796b" />
+  <text x="500" y="120" text-anchor="middle" fill="#ffffff" font-size="42" font-weight="bold">TROPICAL MENU</text>
+
+  <!-- Smoothie Section -->
+  <text x="500" y="250" text-anchor="middle" fill="#004d40" font-size="32" font-weight="bold">TROPICAL SMOOTHIES</text>
+  <g font-size="20" fill="#004d40">
+    <text x="150" y="300">Pineapple Paradise</text><text x="850" y="300" text-anchor="end">$9</text>
+    <text x="150" y="330">Coconut Bliss</text><text x="850" y="330" text-anchor="end">$8</text>
+    <text x="150" y="360">Mango Tango</text><text x="850" y="360" text-anchor="end">$10</text>
+  </g>
+
+  <!-- Salad Section -->
+  <text x="500" y="450" text-anchor="middle" fill="#00796b" font-size="32" font-weight="bold">FRESH SALADS</text>
+  <g font-size="20" fill="#004d40">
+    <text x="150" y="500">Tropical Fruit Salad</text><text x="850" y="500" text-anchor="end">$12</text>
+    <text x="150" y="530">Avocado Salad</text><text x="850" y="530" text-anchor="end">$11</text>
+    <text x="150" y="560">Grilled Chicken Salad</text><text x="850" y="560" text-anchor="end">$14</text>
+  </g>
+
+  <!-- Drinks Section -->
+  <text x="500" y="650" text-anchor="middle" fill="#00796b" font-size="32" font-weight="bold">BEACH DRINKS</text>
+  <g font-size="20" fill="#004d40">
+    <text x="150" y="700">Pina Colada</text><text x="850" y="700" text-anchor="end">$12</text>
+    <text x="150" y="730">Mojito</text><text x="850" y="730" text-anchor="end">$11</text>
+    <text x="150" y="760">Margarita</text><text x="850" y="760" text-anchor="end">$13</text>
+  </g>
+
+  <!-- Decorative Footer Wave -->
+  <path d="M0,1300 Q500,1450 1000,1300" fill="#00796b" />
+  <text x="500" y="1350" text-anchor="middle" fill="#ffffff" font-size="18">© 2024 Tropical Beach Cafe</text>
+</svg>

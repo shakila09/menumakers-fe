@@ -39,21 +39,6 @@ const BuyTemplate = ({ templates }) => {
       console.error(result.error.message);
     }
   };
-   //email sent code
-  //   if(!result.error){
-  //     emailjs.send('service_tykzw2c', 'template_es9bbh8', {
-  //       to_email: sessionStorage.getItem('userEmail'), // This should be the recipient's email
-  //       subject: 'Payment Successful',
-  //       message: 'Thank you for your purchase! You can now edit your template.',
-  //     }, 'HIiQgXkfmQYOqLiB8')
-  //     .then(() => {
-  //       alert('Email sent successfully');
-  //     }, (error) => {
-  //       console.error(error.text);
-  //       alert('Failed to send email');
-  //     });
-  //   }
-  // };
 
   return (
     <div>

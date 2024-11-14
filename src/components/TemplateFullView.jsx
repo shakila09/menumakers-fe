@@ -34,8 +34,8 @@ function TemplateFullView({ templates }) {
           {template.category === 'Premium' ? (
            <> <p><strong>Price:</strong>{template.price}</p>
 
-             {templates.map((template) => (
-        <Link key={template.id} to={`/Buytemplate/${template.id}`}>   <button className="purchase-button">Buy</button></Link> ))}</>
+             {/* {templates.map((template) => ( */}
+        <Link key={template.id} to={`/Buytemplate/${template.id}`}>   <button className="purchase-button">Buy</button></Link> </>
     ) : (
             <button className="edit-button1" onClick={handleEditClick}>Edit</button>
           )}

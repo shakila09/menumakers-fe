@@ -1,0 +1,58 @@
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Arial', sans-serif;">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="black" />
+      <stop offset="100%" stop-color="black" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1200" fill="url(#bgGradient)" />
+
+  <!-- Header -->
+  <text x="50%" y="100" text-anchor="middle" font-size="48" font-weight="bold" fill="#4a4a4a">Welcome to Our Restaurant</text>
+  <text x="50%" y="140" text-anchor="middle" font-size="20" fill="#4a4a4a">Delicious Food And Amazing Drinks</text>
+
+  <!-- Starters Section -->
+  <rect x="50" y="180" width="700" height="50" rx="10" fill="#e4dde7" />
+  <text x="400" y="215" text-anchor="middle" font-size="28" font-weight="bold" fill="black">Starters</text>
+  <g font-size="20" fill="#4a4a4a">
+    <text x="80" y="270">Avocado Toast</text><text x="720" y="270" text-anchor="end">$12.00</text>
+    <text x="80" y="310">Garlic Parmesan Fries</text><text x="720" y="310" text-anchor="end">$10.00</text>
+    <text x="80" y="350">Buffalo Wings</text><text x="720" y="350" text-anchor="end">$15.00</text>
+    <text x="80" y="390">Spring Rolls</text><text x="720" y="390" text-anchor="end">$8.00</text>
+  </g>
+
+  <!-- Mains Section -->
+  <rect x="50" y="440" width="700" height="50" rx="10" fill="#e4dde7" />
+  <text x="400" y="475" text-anchor="middle" font-size="28" font-weight="bold" fill="black">Mains</text>
+  <g font-size="20" fill="#4a4a4a">
+    <text x="80" y="530">Grilled Ribeye Steak</text><text x="720" y="530" text-anchor="end">$28.00</text>
+    <text x="80" y="570">Spaghetti Carbonara</text><text x="720" y="570" text-anchor="end">$20.00</text>
+    <text x="80" y="610">Chicken Alfredo</text><text x="720" y="610" text-anchor="end">$22.00</text>
+    <text x="80" y="650">Margherita Pizza</text><text x="720" y="650" text-anchor="end">$18.00</text>
+  </g>
+
+  <!-- Desserts Section -->
+  <rect x="50" y="700" width="700" height="50" rx="10" fill="#e4dde7" />
+  <text x="400" y="735" text-anchor="middle" font-size="28" font-weight="bold" fill="black">Desserts</text>
+  <g font-size="20" fill="#4a4a4a">
+    <text x="80" y="790">Chocolate Cake</text><text x="720" y="790" text-anchor="end">$9.00</text>
+    <text x="80" y="830">Tiramisu</text><text x="720" y="830" text-anchor="end">$10.00</text>
+    <text x="80" y="870">Cheesecake</text><text x="720" y="870" text-anchor="end">$11.00</text>
+    <text x="80" y="910">Ice Cream Sundae</text><text x="720" y="910" text-anchor="end">$7.00</text>
+  </g>
+
+  <!-- Drinks Section -->
+  <rect x="50" y="960" width="700" height="50" rx="10" fill="#e4dde7" />
+  <text x="400" y="995" text-anchor="middle" font-size="28" font-weight="bold" fill="black">Drinks</text>
+  <g font-size="20" fill="#4a4a4a">
+    <text x="80" y="1050">Coca Cola</text><text x="720" y="1050" text-anchor="end">$3.00</text>
+    <text x="80" y="1090">Orange Juice</text><text x="720" y="1090" text-anchor="end">$4.00</text>
+    <text x="80" y="1130">Latte</text><text x="720" y="1130" text-anchor="end">$5.00</text>
+    <text x="80" y="1170">Beer</text><text x="720" y="1170" text-anchor="end">$6.00</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="400" y="1220" text-anchor="middle" font-size="16" fill="#4a4a4a">Thank you for dining with us!</text>
+  <text x="400" y="1240" text-anchor="middle" font-size="16" fill="#4a4a4a">Visit us at www.restaurantwebsite.com</text>
+</svg>

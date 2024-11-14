@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400" viewBox="0 0 1000 1400" style="background-color:#faf3e0; font-family: 'Georgia', serif;">
+  <!-- Decorative Header -->
+  <path d="M100,100 Q500,0 900,100" fill="none" stroke="#c0392b" stroke-width="5" />
+  <text x="500" y="140" text-anchor="middle" fill="#c0392b" font-size="40">ELEGANT CAFE MENU</text>
+
+  <!-- Section Dividers -->
+  <line x1="100" y1="200" x2="900" y2="200" stroke="#c0392b" stroke-width="3" />
+  <line x1="100" y1="1000" x2="900" y2="1000" stroke="#c0392b" stroke-width="3" />
+
+  <!-- Breakfast Section -->
+  <text x="500" y="250" text-anchor="middle" fill="#2c3e50" font-size="32" font-weight="bold">BREAKFAST</text>
+  <g font-size="18" fill="#2c3e50">
+    <text x="150" y="300">Avocado Toast - Fresh avocado on sourdough bread</text><text x="850" y="300" text-anchor="end">$10</text>
+    <text x="150" y="330">Egg Benedict - Poached eggs with hollandaise sauce</text><text x="850" y="330" text-anchor="end">$12</text>
+    <text x="150" y="360">French Toast - Served with maple syrup and berries</text><text x="850" y="360" text-anchor="end">$11</text>
+  </g>
+
+  <!-- Lunch Section -->
+  <text x="500" y="450" text-anchor="middle" fill="#2c3e50" font-size="32" font-weight="bold">LUNCH</text>
+  <g font-size="18" fill="#2c3e50">
+    <text x="150" y="500">Caesar Salad - Crisp romaine with Caesar dressing</text><text x="850" y="500" text-anchor="end">$9</text>
+    <text x="150" y="530">Grilled Chicken Sandwich - With garlic aioli</text><text x="850" y="530" text-anchor="end">$13</text>
+    <text x="150" y="560">Margarita Pizza - Fresh tomatoes and basil</text><text x="850" y="560" text-anchor="end">$15</text>
+  </g>
+
+  <!-- Footer Decoration -->
+  <text x="500" y="1350" text-anchor="middle" fill="#c0392b" font-size="18">Visit us at: www.elegantcafe.com</text>
+</svg>
