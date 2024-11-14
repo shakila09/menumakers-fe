@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200" style="background-color:#ffffff; font-family: 'Georgia', serif;">
+  <!-- Title -->
+  <text x="400" y="80" text-anchor="middle" fill="#8e44ad" font-size="48" font-weight="bold">DINNER MENU</text>
+
+  <!-- Appetizers -->
+  <text x="400" y="150" text-anchor="middle" fill="#34495e" font-size="28">Appetizers</text>
+  <g font-size="20" fill="#2c3e50">
+    <text x="400" y="200" text-anchor="middle">Bruschetta - $8</text>
+    <text x="400" y="230" text-anchor="middle">Stuffed Mushrooms - $10</text>
+    <text x="400" y="260" text-anchor="middle">Caesar Salad - $9</text>
+  </g>
+
+  <!-- Main Course -->
+  <text x="400" y="320" text-anchor="middle" fill="#34495e" font-size="28">Main Course</text>
+  <g font-size="20" fill="#2c3e50">
+    <text x="400" y="370" text-anchor="middle">Grilled Salmon - $18</text>
+    <text x="400" y="400" text-anchor="middle">Ribeye Steak - $25</text>
+    <text x="400" y="430" text-anchor="middle">Chicken Alfredo - $15</text>
+  </g>
+
+  <!-- Desserts -->
+  <text x="400" y="490" text-anchor="middle" fill="#34495e" font-size="28">Desserts</text>
+  <g font-size="20" fill="#2c3e50">
+    <text x="400" y="540" text-anchor="middle">Cheesecake - $7</text>
+    <text x="400" y="570" text-anchor="middle">Chocolate Mousse - $8</text>
+    <text x="400" y="600" text-anchor="middle">Tiramisu - $9</text>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200" style="background-color:#2b2b2b; font-family: 'Courier New', Courier, monospace;">
+  <!-- Title -->
+  <text x="400" y="100" text-anchor="middle" fill="#ffffff" font-size="40">COFFEE MENU</text>
+<text x="250" y="150" text-anchor="middle" fill="#ffffff" font-size="30" style="font-family:'itallic'">☕ Hot Coffees</text>
+  <!-- Coffee Section -->
+  <g font-size="22" fill="#ffcc00">
+    <text x="150" y="200">Espresso - $3</text>
+    <text x="150" y="250">Latte - $4</text>
+    <text x="150" y="300">Cappuccino - $4.5</text>
+    <text x="150" y="350">Americano - $3.5</text>
+    <text x="150" y="400">Mocha - $5</text>
+    <text x="150" y="450">Irish Coffee - $5</text>
+    <text x="150" y="500">Ristretto - $6</text>
+    <text x="150" y="550">Ristretto - $6</text>
+  </g>
+<text x="250" y="650" text-anchor="middle" fill="#ffffff" font-size="30" style="font-family:'itallic'">🧊 Cold Coffees</text>
+<g font-size="22" fill="#ffcc00">
+    <text x="150" y="700">Cold Brew  - $4</text>
+    <text x="150" y="750">Iced Latte - $3.5</text>
+    <text x="150" y="800">Frappuccino - $5</text>
+    <text x="150" y="850">Iced Mocha - $5</text>
+    <text x="150" y="900">Affogato al Caffè - $7</text>
+    <text x="150" y="950">Iced Coffee - $3</text>
+    </g>
+  <!-- Beverage Icons -->
+  <circle cx="500" cy="200" r="30" fill="#d35400" />
+  <circle cx="500" cy="300" r="30" fill="#c0392b" />
+  <circle cx="500" cy="400" r="30" fill="#2980b9" />
+  <circle cx="500" cy="500" r="30" fill="#d35400" />
+  <circle cx="500" cy="600" r="30" fill="#c0392b" />
+  <circle cx="500" cy="700" r="30" fill="#2980b9" />
+  <circle cx="500" cy="800" r="30" fill="#2980b9" />
+  <circle cx="500" cy="900" r="30" fill="#2980b9" />
+</svg>

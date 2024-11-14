@@ -19,25 +19,25 @@
   </text>
   <line x1="80" y1="270" x2="300" y2="270" stroke="#4B3F2F" stroke-width="1" />
   <text x="80" y="310" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Espresso ........................................... $5
+    Espresso ............................... $5
   </text>
   <text x="400" y="310" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
     Macchiato ........................................... $5
   </text>
   <text x="80" y="340" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Double Espresso ................................ $5
+    Double Espresso ................... $5
   </text>
   <text x="400" y="340" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
     Flat White ............................................ $5
   </text>
   <text x="80" y="370" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Latte .................................................... $5
+    Latte ...................................... $5
   </text>
   <text x="400" y="370" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
     Cappuccino ......................................... $5
   </text>
   <text x="80" y="400" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Americano .......................................... $5
+    Americano ............................. $5
   </text>
 
   <!-- Tea Section -->
@@ -46,34 +46,34 @@
   </text>
   <line x1="80" y1="480" x2="300" y2="480" stroke="#4B3F2F" stroke-width="1" />
   <text x="80" y="520" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Lemon Tea .......................................... $5
+    Lemon Tea ............................. $5
   </text>
   <text x="400" y="520" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Hot Chocolate .................................... $5
+    Hot Chocolate ..................................... $5
   </text>
   <text x="80" y="550" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Mango Tea ......................................... $5
+    Mango Tea ............................. $5
   </text>
   <text x="400" y="550" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Milkshake ............................................. $5
+    Milkshake ............................................ $5
   </text>
   <text x="80" y="580" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Jasmine ................................................. $5
+    Jasmine ................................. $5
   </text>
   <text x="400" y="580" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Smoothie .............................................. $5
+    Smoothie ............................................. $5
   </text>
   <text x="80" y="610" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Green Tea ............................................ $5
+    Green Tea ...............................$5
   </text>
   <text x="400" y="610" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Lemonade ............................................ $5
+    Lemonade ........................................... $5
   </text>
   <text x="80" y="640" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Mint Tea ............................................... $5
+    Mint Tea ................................. $5
   </text>
   <text x="400" y="640" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Vanilla Milkshake ................................. $5
+    Vanilla Milkshake ................................ $5
   </text>
 
   <!-- Desserts Section -->
@@ -82,25 +82,25 @@
   </text>
   <line x1="80" y1="720" x2="300" y2="720" stroke="#4B3F2F" stroke-width="1" />
   <text x="80" y="760" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Strawberry Waffle ............................... $5
+    Strawberry Waffle ................... $5
   </text>
   <text x="400" y="760" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Chocolate Waffle ................................. $5
+    Chocolate Waffle ................................ $5
   </text>
   <text x="80" y="790" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Cinnamon Roll ..................................... $5
+    Cinnamon Roll ........................ $5
   </text>
   <text x="400" y="790" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Brownies ............................................... $5
+    Brownies ............................................ $5
   </text>
   <text x="80" y="820" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Lemon Pie ............................................. $5
+    Lemon Pie .............................. $5
   </text>
   <text x="400" y="820" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Cheesecake ......................................... $5
+    Cheesecake ....................................... $5
   </text>
   <text x="80" y="850" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
-    Croissant ............................................... $5
+    Croissant ................................ $5
   </text>
   <text x="400" y="850" font-family="Arial, sans-serif" font-size="18" fill="#4B3F2F">
     Chocolate Muffin ................................ $5

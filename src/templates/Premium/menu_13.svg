@@ -1,0 +1,47 @@
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg" style="background-color:#8B5A2B; font-family: 'Georgia', serif;">
+  <!-- Menu Background -->
+  <rect x="50" y="50" width="700" height="1100" rx="20" fill="#f4f1e1" stroke="#333333" stroke-width="2"/>
+
+  <!-- Header -->
+  <text x="400" y="150" text-anchor="middle" font-size="48" font-weight="bold" fill="#8B0000">Restaurant Menu</text>
+  <text x="400" y="190" text-anchor="middle" font-size="18" fill="#666666">~ Fine Dining Experience ~</text>
+
+  <!-- Appetizers Section -->
+  <text x="100" y="250" font-size="28" font-weight="bold" fill="#333333">Appetizers</text>
+  <line x1="100" y1="260" x2="700" y2="260" stroke="#8B0000" stroke-width="1"/>
+  <g font-size="20" fill="#333333">
+    <text x="100" y="300">Bruschetta</text><text x="700" y="300" text-anchor="end">$12.00</text>
+    <text x="100" y="340">Stuffed Mushrooms</text><text x="700" y="340" text-anchor="end">$14.00</text>
+    <text x="100" y="380">Garlic Shrimp</text><text x="700" y="380" text-anchor="end">$16.00</text>
+    <text x="100" y="420">Caprese Salad</text><text x="700" y="420" text-anchor="end">$10.00</text>
+  </g>
+
+  <!-- Main Courses Section -->
+  <text x="100" y="500" font-size="28" font-weight="bold" fill="#333333">Main Courses</text>
+  <line x1="100" y1="510" x2="700" y2="510" stroke="#8B0000" stroke-width="1"/>
+  <g font-size="20" fill="#333333">
+    <text x="100" y="550">Grilled Ribeye Steak</text><text x="700" y="550" text-anchor="end">$35.00</text>
+    <text x="100" y="590">Seared Salmon</text><text x="700" y="590" text-anchor="end">$28.00</text>
+    <text x="100" y="630">Chicken Alfredo</text><text x="700" y="630" text-anchor="end">$25.00</text>
+    <text x="100" y="670">Vegetarian Pasta</text><text x="700" y="670" text-anchor="end">$22.00</text>
+  </g>
+
+  <!-- Desserts Section -->
+  <text x="100" y="750" font-size="28" font-weight="bold" fill="#333333">Desserts</text>
+  <line x1="100" y1="760" x2="700" y2="760" stroke="#8B0000" stroke-width="1"/>
+  <g font-size="20" fill="#333333">
+    <text x="100" y="800">Chocolate Lava Cake</text><text x="700" y="800" text-anchor="end">$10.00</text>
+    <text x="100" y="840">Tiramisu</text><text x="700" y="840" text-anchor="end">$12.00</text>
+    <text x="100" y="880">Cheesecake</text><text x="700" y="880" text-anchor="end">$11.00</text>
+    <text x="100" y="920">Ice Cream Sundae</text><text x="700" y="920" text-anchor="end">$9.00</text>
+  </g>
+
+  <!-- Footer Contact Information -->
+  <line x1="100" y1="980" x2="700" y2="980" stroke="#8B0000" stroke-width="1"/>
+  <text x="400" y="1020" text-anchor="middle" font-size="18" fill="#333333">123 Main Street, City, Country</text>
+  <text x="400" y="1050" text-anchor="middle" font-size="18" fill="#333333">Call us: (123) 456-7890</text>
+  <text x="400" y="1080" text-anchor="middle" font-size="18" fill="#333333">www.restaurantwebsite.com</text>
+
+  <!-- Decorative Footer -->
+  <text x="400" y="1140" text-anchor="middle" font-size="16" fill="#8B0000">~ Bon Appétit ~</text>
+</svg>

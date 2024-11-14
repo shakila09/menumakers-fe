@@ -11,7 +11,7 @@
   </text>
 
   <!-- Main Course Section -->
-  <rect x="30" y="150" width="120" height="40" rx="5" ry="5" fill="#F7941D" />
+  <rect x="30" y="150" width="150" height="40" rx="5" ry="5" fill="#F7941D" />
   <text x="90" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="black">
     MAIN COURSE
   </text>

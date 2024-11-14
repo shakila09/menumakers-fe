@@ -92,7 +92,7 @@ const isPurchased = (templateName) => purchasedTemplates.includes(templateName);
         </div>
         </section>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         {svgPaths.map((template) => (
           <div key={template.id} style={{ margin: '40px'}}>
             <div className="template-card" 
