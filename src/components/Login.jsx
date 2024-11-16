@@ -22,8 +22,20 @@ const Login = () => {
     try {
       setErrors([]); // Clear previous errors
   
+
+   // ✨ UPDATED: Login request and storing user name and email in sessionStorage
+   const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
+
+   const { name, email } = response.data; // ✨ UPDATED: Destructuring response to get name and email
+
+   sessionStorage.setItem('userName', name); // ✨ UPDATED: Store user name
+   sessionStorage.setItem('userEmail', email); // ✨ Store user email
+
+   alert('User logged in successfully');
+
+
       // Make POST request with withCredentials set to true
-      const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
+      //const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
       
       // Set user data in sessionStorage if available
       // if (response.data && response.data.name) {
