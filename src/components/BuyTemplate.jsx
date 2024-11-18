@@ -1,7 +1,8 @@
 import React from 'react';
 // import emailjs from 'emailjs-com';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import Modal from 'react-modal';
 import './BuyTemplate.css';
@@ -12,13 +13,60 @@ const stripePromise = loadStripe('pk_test_51QFnlHKaDpnPRyI3d9z9MvyGOjVUOq1c51QQn
 
 const BuyTemplate = ({ templates }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [purchasedTemplates, setPurchasedTemplates] = useState([]);
+
+  // Authentication check: Prevent user from accessing the page without logging in
+  useEffect(() => {
+    const userEmail = sessionStorage.getItem('userEmail');
+
+    // Redirect to login page if the user is not logged in
+    if (!userEmail) {
+      alert('You must be logged in to access this page.');
+      navigate('/login');
+    }
+  }, [navigate]);
+
+
   // Find template details by ID
   const template = templates.find((temp) => temp.id === id);
- 
+  useEffect(() => {
+    const userEmail = sessionStorage.getItem('userEmail');
+    console.log("checkpurchase  " + userEmail);
+    if (userEmail){
+    // Fetch purchased templates for the logged-in user
+    const fetchPurchasedTemplates = async () => {
+      if (userEmail) {
+        try {
+          const response = await fetch(`http://localhost:5001/api/purchases/User-purchases?userEmail=${userEmail}`);
+          const data = await response.json();
+  
+          if (!response.ok) {
+            throw new Error(data.message);
+          }
+  
+          // Store the names of purchased templates
+          const purchasedNames = data.map((purchase) => purchase.templateName);
+          setPurchasedTemplates(purchasedNames);
+        } catch (error) {
+          console.error('Error fetching purchased templates:', error);
+        }
+      }
+    };
+  
+    fetchPurchasedTemplates();
+  }}, []);
+  // Check if the template is already purchased
+  const isPurchased = (templateName) => purchasedTemplates.includes(templateName);
+
+  const handleEditClick = () => {
+    navigate('/menu-editor', { state: { templateSrc: template.src } });
+  };
+
+  
   const handleBuy = async () => {
     const stripe = await stripePromise;
-
     const response = await fetch('http://localhost:5001/api/payment/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -41,12 +89,11 @@ const BuyTemplate = ({ templates }) => {
   };
 
   return (
-    <div>
+    <div>             
       <div className="template-details-page">
       <header className="header">
         
       </header>
-      
       <main className="main-content">
         <div className="image-section">
     
@@ -56,6 +103,17 @@ const BuyTemplate = ({ templates }) => {
         <div className="info-section">
           <h2 className="title">Must Have Menus</h2>
           <h4 className="logo">MenuMakers <span className="star-rating">★★★★☆</span></h4>
+          {template.category === 'Free' ? (
+  <>
+    <p>This is a free template. Click on the button below to edit it directly.</p>
+    <button onClick={handleEditClick} className="customize-button">Edit This Template</button>
+  </>
+) :  isPurchased(template.id) ? (
+        <><p>You have already purchased this template. Click on the button below to edit it  </p>
+              <button onClick={handleEditClick} className="customize-button">Edit This Template</button></>
+            ) : (
+
+    <>
           <p className="size">{template.price}</p>
 
           <ul className="features">
@@ -74,7 +132,9 @@ const BuyTemplate = ({ templates }) => {
               Make your edits, order prints or download the design, and thrill your customers with a brand-new menu.
             </p>
             <button onClick={() => setIsModalOpen(true)} className="customize-button">Buy This Template</button>
-          </div>
+          </div> 
+          </>
+          )}
         </div>
       </main>
     </div>

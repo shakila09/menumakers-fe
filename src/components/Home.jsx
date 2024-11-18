@@ -53,10 +53,24 @@ const handleTemplateClick = (templateId, templateSrc) => {
     navigate('/login');
   }
 };
+const handlePremiumTemplateClick = (template) => {
+  const userEmail = sessionStorage.getItem('userEmail');
+
+  if (userEmail) {
+    // User is logged in, navigate to BuyTemplate with ID and templateSrc
+    navigate(`/Buytemplate/${template.id}`, { state: { templateSrc: template.src } });
+  } else {
+    // User is not logged in, save redirect info and ask them to log in
+    sessionStorage.setItem('redirectAfterLogin', JSON.stringify({ path: `/Buytemplate/${template.id}`, templateSrc: template.src }));
+    alert('Please log in to purchase premium templates');
+    navigate('/login');
+  }
+};
 
 useEffect(() => {
   const userEmail = sessionStorage.getItem('userEmail');
-
+  console.log("checkpurchase  " + userEmail);
+  if (userEmail){
   // Fetch purchased templates for the logged-in user
   const fetchPurchasedTemplates = async () => {
     if (userEmail) {
@@ -78,11 +92,12 @@ useEffect(() => {
   };
 
   fetchPurchasedTemplates();
-}, []);
+}}, []);
 // Check if the template is already purchased
 const isPurchased = (templateName) => purchasedTemplates.includes(templateName);
 
   return (
+    
     <div className="home-container">
       <section className="hero">
         <div className="hero-content">
@@ -116,7 +131,7 @@ const isPurchased = (templateName) => purchasedTemplates.includes(templateName);
         
         {svgPaths_pre.map((template) => (
           <div key={template.id} style={{ margin: '40px'}}>
-            <div className="template-card" onClick={() => navigate(`/template/${template.id}`)}
+            <div className="template-card" onClick={() => navigate(`/template/${template.id}`, { state: { isPurchased: isPurchased(template.id)  } })}
           style={{ cursor: 'pointer' }}>
             <img src={template.src} alt={`SVG Template ${template.id}`} width="270" height="350" />
             <div className="overlay">
@@ -135,9 +150,12 @@ const isPurchased = (templateName) => purchasedTemplates.includes(templateName);
             {isPurchased(template.id) ? (
               <button className="purchased-button" disabled>Purchased</button>
             ) : (
-              <Link to={`/Buytemplate/${template.id}`}>
-                <button  className="edit-button">Buy Now</button>
-              </Link>
+             
+                <button  className="edit-button" onClick={(event) => {
+                  event.stopPropagation();
+                  handlePremiumTemplateClick(template); // Pass templateSrc to the function
+                }} >Buy Now</button>
+             
             )}
                 <button className="pro-badge">Pro</button> 
               </div>
