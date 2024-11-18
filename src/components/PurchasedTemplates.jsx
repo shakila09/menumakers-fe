@@ -15,7 +15,7 @@ const navigate = useNavigate();
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/purchases/User-purchases?userEmail=${userEmail}`);
+      const response = await fetch(`http://localhost:5001/api/purchases/User-purchases?userEmail=${userEmail}`);
       const data = await response.json();
 
       if (!response.ok) {

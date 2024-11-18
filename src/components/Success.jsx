@@ -54,7 +54,7 @@ const savePurchaseDetails = async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/api/payment/save-purchase', {
+    const response = await fetch('http://localhost:5001/api/payment/save-purchase', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -93,9 +93,5 @@ return (
 );
 };
 
-<<<<<<< Updated upstream
 
 export default Success;
-=======
-export default Success;
->>>>>>> Stashed changes

@@ -76,9 +76,6 @@ function Header() {
           </li>
           <li><Link to="/about" className="nav-link" >About Us</Link></li>
           <li><Link to="/contact" className="nav-link" >Contact</Link></li>
-  {/* Display the "Used Templates" link only if the user is logged in */}
-  {loggedIn && <li><Link to="/used-templates" className="nav-link">Used Templates</Link></li>}
-
           {loggedIn ? (
             <> 
            <li><Link to="/purchased-templates" className="nav-link"  >Purchased Templates</Link></li>
@@ -98,4 +95,5 @@ function Header() {
     </header>
   );
 }
+
 export default Header;
