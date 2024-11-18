@@ -15,6 +15,10 @@ import MenuEditor from './components/MenuEditor';
 import EditableSVG from './components/EditableSVG';
 import AboutUs from './components/AboutUs';
 import PurchasedTemplates from './components/PurchasedTemplates';
+import UsedTemplates from './components/UsedTemplates';
+
+
+
 
 const App = () => {
   // Dynamically import all SVG files from Free and Premium folders
@@ -59,8 +63,12 @@ const App = () => {
             <Route path="/cancel" element={<Cancel />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/purchased-templates" element={<PurchasedTemplates />} />
+            <Route path="/used-templates" element={<UsedTemplates />} />
+
+            
 
 
+            
           </Routes>
           <Footer />
         </div>
