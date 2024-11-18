@@ -24,7 +24,7 @@ const Register = () => {
 
       // Send a POST request to  backend
       const response = await axios.post(
-        "http://localhost:5001/api/auth/register",
+        "http://localhost:5000/api/auth/register",
         formData
       );
       console.log("User registered:", response.data);

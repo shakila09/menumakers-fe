@@ -67,7 +67,9 @@ const BuyTemplate = ({ templates }) => {
   
   const handleBuy = async () => {
     const stripe = await stripePromise;
+
     const response = await fetch('http://localhost:5001/api/payment/create-checkout-session', {
+
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -85,6 +87,20 @@ const BuyTemplate = ({ templates }) => {
 
     if (result.error) {
       console.error(result.error.message);
+    }
+
+    if(!result.error){
+      emailjs.send('service_tykzw2c', 'template_es9bbh8', {
+        to_email: sessionStorage.getItem('userEmail'), // This should be the recipient's email
+        subject: 'Payment Successful',
+        message: 'Thank you for your purchase! You can now edit your template.',
+      }, 'HIiQgXkfmQYOqLiB8')
+      .then(() => {
+        alert('Email sent successfully');
+      }, (error) => {
+        console.error(error.text);
+        alert('Failed to send email');
+      });
     }
   };
 
