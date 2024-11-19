@@ -37,10 +37,10 @@ function Home() {
 
   useEffect(() => {
     const userId = sessionStorage.getItem('userId');
-    if (!userId) {
-      alert("User not logged in.");
-      return;
-    }
+    // if (!userId) {
+    //   alert("User not logged in.");
+    //   return;
+    // }
   
     fetch(`http://localhost:5000/api/templates/user-templates?userId=${userId}`, {
       cache: 'no-store',
@@ -60,34 +60,6 @@ function Home() {
 
 
 
- // Fetch purchased templates for the logged-in user
- useEffect(() => {
-  const userEmail = sessionStorage.getItem('userEmail');
-  console.log("checkpurchase  " + userEmail);
-
-  if (!userEmail) return;
-
-  const fetchPurchasedTemplates = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:5000/api/purchases/User-purchases?userEmail=${userEmail}`
-      );
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message);
-      }
-
-      // Store the names of purchased templates
-      const purchasedNames = data.map((purchase) => purchase.templateName);
-      setPurchasedTemplates(purchasedNames);
-    } catch (error) {
-      console.error('Error fetching purchased templates:', error);
-    }
-  };
-
-  fetchPurchasedTemplates();
-}, []);
 
 
   // Function to handle template click with login check for free templates
@@ -127,6 +99,34 @@ function Home() {
   };
 
  
+ // Fetch purchased templates for the logged-in user
+ useEffect(() => {
+  const userEmail = sessionStorage.getItem('userEmail');
+  console.log("checkpurchase  " + userEmail);
+
+  if (!userEmail) return;
+
+  const fetchPurchasedTemplates = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/purchases/User-purchases?userEmail=${userEmail}`
+      );
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+
+      // Store the names of purchased templates
+      const purchasedNames = data.map((purchase) => purchase.templateName);
+      setPurchasedTemplates(purchasedNames);
+    } catch (error) {
+      console.error('Error fetching purchased templates:', error);
+    }
+  };
+
+  fetchPurchasedTemplates();
+}, []);
 
 
   // Check if the template is already purchased
