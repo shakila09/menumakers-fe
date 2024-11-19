@@ -26,7 +26,7 @@ useEffect(() => {
       setIsPurchased(navigationIsPurchased);
     } else if (userEmail && template) {
       try {
-        const response = await fetch(`http://localhost:5001/api/purchases/User-purchases?userEmail=${userEmail}`);
+        const response = await fetch(`http://localhost:5000/api/purchases/User-purchases?userEmail=${userEmail}`);
         const data = await response.json();
         const purchasedTemplates = data.map((purchase) => purchase.templateName);
         setIsPurchased(purchasedTemplates.includes(template.id));

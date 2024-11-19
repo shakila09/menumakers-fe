@@ -9,23 +9,28 @@ const UsedTemplates = () => {
     useEffect(() => {
         const userId = sessionStorage.getItem('userId');
         if (!userId) {
-            alert("User not logged in.");
-            return;
+          alert("User not logged in.");
+          return;
         }
-    
-        // Fetch the saved templates for the logged-in user
+      
         fetch(`http://localhost:5000/api/templates/user-templates?userId=${userId}`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log("Fetched templates data:", data); // Log the fetched data
-                if (data.success) {
-                    setTemplates(data.templates);
-                } else {
-                    alert("Failed to fetch saved templates.");
-                }
-            })
-            .catch((error) => console.error("Error fetching templates:", error));
-    }, []);
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
+          })
+          .then((data) => {
+            console.log("Fetched templates data:", data);
+            if (data.success) {
+              setTemplates(data.templates);
+            } else {
+              alert("Failed to fetch saved templates.");
+            }
+          })
+          .catch((error) => console.error("Error fetching templates:", error));
+      }, []);
+      
     
     
     const handleTemplateClick = (template) => {

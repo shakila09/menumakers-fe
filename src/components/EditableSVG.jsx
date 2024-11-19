@@ -148,7 +148,7 @@ const rgbToHex = (rgb) => {
                 return;
             }
     
-            const response = await fetch('http://localhost:5000/api/save-svg', {
+            const response = await fetch('http://localhost:5000/api/templates/save-svg', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, templateName, svgContent: encodedSvgContent }),

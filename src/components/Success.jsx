@@ -93,9 +93,4 @@ return (
 );
 };
 
-<<<<<<< Updated upstream
-
 export default Success;
-=======
-export default Success;
->>>>>>> Stashed changes
