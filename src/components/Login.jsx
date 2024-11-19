@@ -22,33 +22,11 @@ const Login = () => {
     try {
       setErrors([]); // Clear previous errors
   
-
-   // ✨ UPDATED: Login request and storing user name and email in sessionStorage
-   const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
-
-   const { name, email } = response.data; // ✨ UPDATED: Destructuring response to get name and email
-
-   sessionStorage.setItem('userName', name); // ✨ UPDATED: Store user name
-   sessionStorage.setItem('userEmail', email); // ✨ Store user email
-
-   alert('User logged in successfully');
-
-
       // Make POST request with withCredentials set to true
-<<<<<<< Updated upstream
-      //const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
-      
-      // Set user data in sessionStorage if available
-      // if (response.data && response.data.name) {
-        // sessionStorage.setItem('userName', response.data.name); // Assuming the server sends back the user's name
-      // }
-      console.log(formData.email);
-=======
       const response = await axios.post('http://localhost:5000/api/auth/login', formData, { withCredentials: true });
        // Save userId and userEmail in sessionStorage
     if (response.data && response.data.userId) {
       sessionStorage.setItem('userId', response.data.userId);
->>>>>>> Stashed changes
       sessionStorage.setItem('userEmail', formData.email);
       console.log('User ID saved in sessionStorage:', response.data.userId);
     }

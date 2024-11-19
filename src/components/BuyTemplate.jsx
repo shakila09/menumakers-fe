@@ -39,7 +39,7 @@ const BuyTemplate = ({ templates }) => {
     const fetchPurchasedTemplates = async () => {
       if (userEmail) {
         try {
-          const response = await fetch(`http://localhost:5001/api/purchases/User-purchases?userEmail=${userEmail}`);
+          const response = await fetch(`http://localhost:5000/api/purchases/User-purchases?userEmail=${userEmail}`);
           const data = await response.json();
   
           if (!response.ok) {
@@ -68,7 +68,7 @@ const BuyTemplate = ({ templates }) => {
   const handleBuy = async () => {
     const stripe = await stripePromise;
 
-    const response = await fetch('http://localhost:5001/api/payment/create-checkout-session', {
+    const response = await fetch('http://localhost:5000/api/payment/create-checkout-session', {
 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
