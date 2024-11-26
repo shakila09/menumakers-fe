@@ -48,6 +48,7 @@ const handleTemplateClick = (templateName) => {
         <ul className="template-list">
           {purchases.map((purchase) => (
             <li key={purchase._id} className="template-item" onClick={() => handleTemplateClick(purchase.templateName)}>
+              <div class="template-wrapper">
               <h3>Template Name: {purchase.templateName}</h3>
               <p>Purchased on: {new Date(purchase.date).toLocaleDateString()}</p>
               {/* Display the actual template using the constructed file path */}
@@ -56,6 +57,10 @@ const handleTemplateClick = (templateName) => {
                    alt={purchase.templateName}
                   class="purchased-template-image"
                 />
+               <div class="edit-icon">
+                   Edit
+                  </div>
+                  </div>
             </li>
           ))}
         </ul>

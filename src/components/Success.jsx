@@ -1,4 +1,4 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect, useState }  from 'react';
 import './paymentStatus.css'; 
 import { useLocation } from 'react-router-dom';
 const Success = () => {
@@ -6,10 +6,11 @@ const Success = () => {
   const queryParams = new URLSearchParams(location.search);
   const templateId = queryParams.get('templateId');
   const userEmail =sessionStorage.getItem("userEmail");
+  const [isSaved, setIsSaved] = useState(false); // Prevent duplicate saves
 // Function to save purchase details
 const savePurchaseDetails = async () => {
 
-  if (!templateId || !userEmail) {
+  if (!templateId || !userEmail || isSaved) {
     console.error('Missing templateId or userEmail');
     return;
   }
@@ -30,6 +31,7 @@ const savePurchaseDetails = async () => {
     if (!response.ok) {
       throw new Error(data.message);
     }
+    setIsSaved(true);
   } catch (error) {
     console.error('Error saving purchase:', error);
   }
