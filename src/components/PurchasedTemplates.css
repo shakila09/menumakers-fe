@@ -1,4 +1,66 @@
+
 .purchased-templates-container {
+  padding: 20px;
+}
+
+.template-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next row if necessary */
+  gap: 20px; /* Adds space between templates */
+  justify-content: center; /* Centers the items horizontally */
+}
+
+.template-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px; /* Ensures all templates are of the same width */
+  box-sizing: border-box; /* Includes padding and border in width */
+}
+
+.purchased-template-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.template-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the Edit Icon */
+.edit-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: none; /* Initially hidden */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Show the Edit Icon on Hover */
+.template-wrapper:hover .edit-icon {
+  display: block;
+}
+
+.template-wrapper:hover .purchased-template-image {
+  opacity: 0.4; /* Dim the image slightly for better visibility */
+}
+
+
+
+
+/* .purchased-templates-container {
     padding: 20px;
   }
   
@@ -20,4 +82,4 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+   */
