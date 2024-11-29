@@ -27,6 +27,7 @@ const Login = () => {
        // Save userId and userEmail in sessionStorage
     if (response.data && response.data.userId) {
       sessionStorage.setItem('userId', response.data.userId);
+      sessionStorage.setItem('userName', response.data.userName); // ✨ UPDATED: Store user name      
       sessionStorage.setItem('userEmail', formData.email);
       console.log('User ID saved in sessionStorage:', response.data.userId);
     }
@@ -43,14 +44,15 @@ const Login = () => {
    } else {
      // Default redirection after login
 
-      navigate('/home');}
+     navigate('/home');}
       window.location.reload()
     } catch (error) {
       if (error.response && error.response.data.errors) {
         // Set the validation errors from the backend response
         setErrors(error.response.data.errors);
       } else {
-        alert('Error logging in user');
+     // Handle network or server errors
+     setErrors([{ msg: 'Unable to connect to the server. Please try again later.' }]);
       }
     }
   };
