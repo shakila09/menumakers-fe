@@ -75,7 +75,8 @@ function Header() {
             </Link>
           </li>
           <li><Link to="/about" className="nav-link" >About Us</Link></li>
-          <li><Link to="/contact" className="nav-link" >Contact</Link></li>
+          {/* <li><Link to="/contact" className="nav-link" >Contact</Link></li> */}
+
   {/* Display the "Used Templates" link only if the user is logged in */}
   {loggedIn && <li><Link to="/used-templates" className="nav-link">Used Templates</Link></li>}
 

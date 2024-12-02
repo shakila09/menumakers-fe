@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Register.css";
 import backgroundImage from "./background.jpg";
+import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,7 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate(); // Initialize navigate
 
   const [errors, setErrors] = useState([]); // State to store validation errors
 
@@ -29,6 +32,8 @@ const Register = () => {
       );
       console.log("User registered:", response.data);
       alert("User registered successfully");
+      navigate("/login");
+
     } catch (error) {
       if (error.response && error.response.data.errors) {
         // Set the validation errors
